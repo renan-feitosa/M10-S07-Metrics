@@ -123,7 +123,7 @@ networks:
 
 ---
 
-### 🔹 2. **Errors Rate**
+### **Errors Rate**
 
 * **Tipo:** Timeseries (linha)
 * **Métricas:**
@@ -136,7 +136,7 @@ networks:
 
 ---
 
-### 🔹 3. **Requests Duration (p50–p99.9)**
+### **Requests Duration (p50–p99.9)**
 
 * **Tipo:** Timeseries
 * **Métrica:** `http_server_request_duration_seconds_bucket`
@@ -147,7 +147,7 @@ networks:
 
 ---
 
-### 🔹 4. **Current Requests**
+### **Current Requests**
 
 * **Tipo:** Timeseries
 * **Métrica:** `http_server_active_requests`
@@ -157,7 +157,7 @@ networks:
 
 ---
 
-### 🔹 5. **Top 10 Unhandled Exception Endpoints**
+### **Top 10 Unhandled Exception Endpoints**
 
 * **Tipo:** Tabela
 * **Métrica:** `http_server_request_duration_seconds_count` (com label `error_type`)
@@ -167,7 +167,7 @@ networks:
 
 ---
 
-### 🔹 6. **Total Requests**
+### **Total Requests**
 
 * **Tipo:** Stat (valor único)
 * **Métrica:** `http_server_request_duration_seconds_count`
@@ -177,7 +177,7 @@ networks:
 
 ---
 
-### 🔹 7. **Requests Secured**
+### **Requests Secured**
 
 * **Tipo:** Stat
 * **Métrica:** `http_server_request_duration_seconds_count` com label `url_scheme`
@@ -186,7 +186,7 @@ networks:
 
 ---
 
-### 🔹 8. **Total Unhandled Exceptions**
+### **Total Unhandled Exceptions**
 
 * **Tipo:** Stat
 * **Métrica:** `http_server_request_duration_seconds_count` com label `error_type`
@@ -195,7 +195,7 @@ networks:
 
 ---
 
-### 🔹 9. **Requests HTTP Protocol**
+### **Requests HTTP Protocol**
 
 * **Tipo:** Stat
 * **Métrica derivada:** Substitui `network_protocol_version` por `http/1.1`, etc.
