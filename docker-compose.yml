@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  prometheus:
+    build: .
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+  grafana:
+    image: grafana/grafana-oss:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/dashboards:/etc/grafana/dashboards:ro
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+    networks:
+      - monitoring
+
+volumes:
+  grafana-data:
+
+networks:
+  monitoring:
+    driver: bridge
